@@ -35,7 +35,11 @@
 		        android:textSize="20sp"
 		        android:textStyle="bold"/>
 		
+<<<<<<< HEAD
 		    <TextView
+=======
+		    <!-- <TextView
+>>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
 		        android:id="@+id/textView2"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
@@ -53,7 +57,11 @@
 		        android:paddingBottom="10dp"
 		        android:text="TextView" 
 		        android:textColor="#F7FFFF"
+<<<<<<< HEAD
 		        android:textSize="15sp"/>
+=======
+		        android:textSize="15sp"/> -->
+>>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
 		    
 	    </LinearLayout>
     

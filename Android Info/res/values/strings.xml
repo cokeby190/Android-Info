@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AndroidInfoActivity!</string>
+    <string name="app_name">Android Info</string>
+    
+    <string name="act_phone_ident">Phone Information</string>
+    <string name="act_software_info">Software Information</string>
+    <string name="act_network">Network</string>
+    <string name="act_wifi">Wifi</string>
+    <string name="act_location">Location</string>
+    <string name="act_sensor">Sensor</string>
+    <string name="act_wte">WhereToEat Directory</string>
+    
+    <string name="accelerometer_button">Accelerometer Information</string>
+    <string name="gyroscope_button">Gyroscope Information</string>
+    <string name="magnetometer_button">Magnetometer Information</string>
+    <string name="light_button">Light Information</string>
+    <string name="proximity_button">Proximity Information</string>
+    <string name="orientation_button">Orientation Information</string>
+
+</resources>

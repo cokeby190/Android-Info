@@ -19,7 +19,10 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+>>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
 
 public class xml_act extends ListActivity implements TextWatcher{
 
@@ -86,19 +89,30 @@ public class xml_act extends ListActivity implements TextWatcher{
         
         //CONSTRUCTOR FOR SimpleAdapter
         //SimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to)
+<<<<<<< HEAD
         filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
         		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1, R.id.textView2, R.id.textView3});
         
         //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
         //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1});
+=======
+        //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
+        //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1, R.id.textView2, R.id.textView3});
+        
+        filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
+        		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1});
+>>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
         
         
         //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.xml_display, 
         //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.list_text});
         setListAdapter(filter_adapter);
         
+<<<<<<< HEAD
         onclick_obj = new listener();
         
+=======
+>>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
         lv.setTextFilterEnabled(true);
         lv.setOnItemClickListener(onclick_obj);
         
@@ -128,7 +142,10 @@ public class xml_act extends ListActivity implements TextWatcher{
     
     public class listener implements OnItemClickListener {
 
+<<<<<<< HEAD
     	@Override
+=======
+>>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			// Starting new intent
             Intent in = new Intent(getApplicationContext(), sensor_act.class);
@@ -139,7 +156,11 @@ public class xml_act extends ListActivity implements TextWatcher{
 		}
     	
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
 	public void afterTextChanged(Editable s) {
 	}
 
