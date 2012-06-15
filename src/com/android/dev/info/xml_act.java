@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class xml_act extends ListActivity implements TextWatcher{
 
@@ -85,16 +86,18 @@ public class xml_act extends ListActivity implements TextWatcher{
         
         //CONSTRUCTOR FOR SimpleAdapter
         //SimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to)
-        //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
-        //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1, R.id.textView2, R.id.textView3});
-        
         filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
-        		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1});
+        		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1, R.id.textView2, R.id.textView3});
+        
+        //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
+        //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1});
         
         
         //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.xml_display, 
         //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.list_text});
         setListAdapter(filter_adapter);
+        
+        onclick_obj = new listener();
         
         lv.setTextFilterEnabled(true);
         lv.setOnItemClickListener(onclick_obj);
@@ -125,6 +128,7 @@ public class xml_act extends ListActivity implements TextWatcher{
     
     public class listener implements OnItemClickListener {
 
+    	@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			// Starting new intent
             Intent in = new Intent(getApplicationContext(), sensor_act.class);
@@ -135,7 +139,7 @@ public class xml_act extends ListActivity implements TextWatcher{
 		}
     	
     }
-
+    
 	public void afterTextChanged(Editable s) {
 	}
 
