@@ -19,10 +19,6 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-<<<<<<< HEAD
-import android.widget.Toast;
-=======
->>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
 
 public class xml_act extends ListActivity implements TextWatcher{
 
@@ -46,7 +42,7 @@ public class xml_act extends ListActivity implements TextWatcher{
     ListAdapter filter_adapter;
     EditText filterText = null;
     
-    listener onclick_obj;
+    //listener onclick_obj;
  
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,7 +68,7 @@ public class xml_act extends ListActivity implements TextWatcher{
             Element e = (Element) nl.item(i);
             // adding each child node to HashMap key => value
             //hashmap.put(KEY, VALUE)
-            map.put(CANTEEN_NAME, parser.getValue(e, CANTEEN_NAME));
+            map.put(CANTEEN_NAME, parser.getValue(e, CANTEEN_NAME));            
             map.put(STORE_NAME, parser.getValue(e, STORE_NAME));
             map.put(LOCATION, parser.getValue(e, LOCATION));
             map.put(ROOM_CODE, parser.getValue(e, ROOM_CODE));
@@ -83,84 +79,44 @@ public class xml_act extends ListActivity implements TextWatcher{
             // adding HashList to ArrayList
             menuItems.add(map);
         }
- 
+
         filterText = (EditText) findViewById(R.id.search_box);
         filterText.addTextChangedListener(this);
         
         //CONSTRUCTOR FOR SimpleAdapter
         //SimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to)
-<<<<<<< HEAD
         filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
         		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1, R.id.textView2, R.id.textView3});
         
-        //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
-        //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1});
-=======
-        //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
-        //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1, R.id.textView2, R.id.textView3});
-        
-        filter_adapter = new SimpleAdapter(this, menuItems, R.layout.row_view, 
-        		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.textView1});
->>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
-        
-        
-        //filter_adapter = new SimpleAdapter(this, menuItems, R.layout.xml_display, 
-        //		new String[] { STORE_NAME, LOCATION, CANTEEN_NAME }, new int[] {R.id.list_text});
         setListAdapter(filter_adapter);
         
-<<<<<<< HEAD
-        onclick_obj = new listener();
-        
-=======
->>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
         lv.setTextFilterEnabled(true);
-        lv.setOnItemClickListener(onclick_obj);
-        
-//        // listening to single listitem click
-//        lv.setOnItemClickListener(new OnItemClickListener() {
-// 
-//            //@Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//            	
-//                // getting values from selected ListItem
-//                //String store_name = ((TextView) view.findViewById(R.id.textView1)).getText().toString();
-//                //String location = ((TextView) view.findViewById(R.id.textView2)).getText().toString();
-//                //String canteen_name = ((TextView) view.findViewById(R.id.textView3)).getText().toString();
-// 
-//                // Starting new intent
-//                Intent in = new Intent(getApplicationContext(), sensor_act.class);
-//                //in.putExtra(STORE_NAME, store_name);
-//                //in.putExtra(LOCATION, location);
-//                //in.putExtra(CANTEEN_NAME, canteen_name);
-//                startActivity(in);
-// 
-//            }
-//        });
+        //lv.setOnItemClickListener(onclick_obj);
         
         
+        lv.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Intent in = new Intent(xml_act.this, sensor_act.class);
+	            startActivity(in);
+			}
+        	
+        });
+
     }
     
-    public class listener implements OnItemClickListener {
+//    public class listener implements OnItemClickListener {
+//    	
+//    	@Override
+//		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//			// Starting new intent
+//            Intent in = new Intent(xml_act.this, sensor_act.class);
+//            startActivity(in);
+//		}
+//    	
+//    }
 
-<<<<<<< HEAD
-    	@Override
-=======
->>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
-		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			// Starting new intent
-            Intent in = new Intent(getApplicationContext(), sensor_act.class);
-            //in.putExtra(STORE_NAME, store_name);
-            //in.putExtra(LOCATION, location);
-            //in.putExtra(CANTEEN_NAME, canteen_name);
-            startActivity(in);
-		}
-    	
-    }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> d950cd29c6b451236ae6ea2caf27b850f0009f47
 	public void afterTextChanged(Editable s) {
 	}
 
